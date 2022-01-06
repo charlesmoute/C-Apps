@@ -50,7 +50,8 @@ nt dans le code de la fonction visualize(char*filename) )
 <br />		---		Pr&eacute;sentation sommaire de l'application		---
 <br />
 <br />L'interface de l'application a &eacute;t&eacute; fait &agrave; partir de la librairie curses, et nous avons consid&eacute;r&eacute; que la configuration de curses impose directement ncurses. Si ce n'est pas le cas de votre syst&eacute;me, une erreur pourrait survenir et pour la corriger vous devrez modifier les option SOURCE et CFLAGS du fichier Makefile ainsi qu'il suit : 
-<br/> SOURCE=.:/usr/include/ncurses CFLAGS= -lncurses
+<br/> SOURCE=.:/usr/include/ncurses 
+<br/> CFLAGS= -lncurses
 <br/> Principalement vous aurez quatres menus. A tout moment vous pouvez taper q pour sortir d'un menu et l'option de visualisation vous permet d'afficher la derni&eacute;re image &agrave; laquelle vous avez e&ucirc;t acc&eacute;s.
 <br />
 <br />- Le premier menu : Menu principale
