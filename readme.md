@@ -43,25 +43,15 @@ nt dans le code de la fonction visualize(char*filename) )
 <br />
 <br/>1- Pour recompiler vous devez taper d'abord make clean et ensuite make all
 <br />
-<br />2- Pour tester l'application tapez make test. Afin d'&eacute;viter 
-une erreur du genre 
-<br />   &quot; vous n'avez pas la permission pour execlp&quot; nous vous conseillons de copier 
-<br />   d'abord les fichiers sur votre distribution linux.
+<br />2- Pour tester l'application tapez make test. Afin d'&eacute;viter une erreur du genre  &quot; vous n'avez pas la permission pour execlp&quot; nous vous conseillons de copier d'abord les fichiers sur votre distribution linux.
 <br />
 <br />3- Pour effacer les fichiers g&eacute;n&eacute;r&eacute;s lors de la compilation vous devez taper make clean.
 <br />
-<br /
->		---		Pr&eacute;sentation sommaire de l'application		---
+<br />		---		Pr&eacute;sentation sommaire de l'application		---
 <br />
-<br />L'interface de l'application a &eacute;t&eacute; fait &agrave; partir de la librairie 
-curses, et nous avons consid&eacute;r&eacute; que 
-<br />la configuration de curses impose directement ncurses. Si ce n'est pas le cas de votre syst&eacute;me,
- une erreur pourrait survenir et pour la corriger vous devrez modifier les option SOURCE et CFLAGS du fichier Makefile ainsi qu'il suit : 
-<br />
-	SOURCE=.:/usr/include/ncurses
-<br />	CFLAGS= -lncurses
-<br />Principalement vous aurez quatres menus. A tout moment vous pouvez taper q pour sortir d'un menu
- et l'option de visualisation vous permet d'afficher la derni&eacute;re image &agrave; laquelle vous avez e&ucirc;t acc&eacute;s.
+<br />L'interface de l'application a &eacute;t&eacute; fait &agrave; partir de la librairie curses, et nous avons consid&eacute;r&eacute; que la configuration de curses impose directement ncurses. Si ce n'est pas le cas de votre syst&eacute;me, une erreur pourrait survenir et pour la corriger vous devrez modifier les option SOURCE et CFLAGS du fichier Makefile ainsi qu'il suit : 
+<br/> SOURCE=.:/usr/include/ncurses CFLAGS= -lncurses
+<br/> Principalement vous aurez quatres menus. A tout moment vous pouvez taper q pour sortir d'un menu et l'option de visualisation vous permet d'afficher la derni&eacute;re image &agrave; laquelle vous avez e&ucirc;t acc&eacute;s.
 <br />
 <br />- Le premier menu : Menu principale
 <br />
@@ -73,11 +63,9 @@ curses, et nous avons consid&eacute;r&eacute; que
 <br />- Le menu principale &eacute;tendu : donne la liste des op&eacute;rations possibles sur l'image courante.
 <br />  L'option visualiser &agrave; ce niveau vous permet d'afficher l'image originelle.
 <br />
-<br
- />	1. Choisir une image.
+<br/>	1. Choisir une image.
 <br />	2. Visualiser image.
-<br />	3. Proprietes ima
-ge.
+<br />	3. Proprietes image.
 <br />	4. Histogramme image.
 <br />	5. Traitements sur image.
 <br />	6. Quitter
@@ -88,8 +76,7 @@ ge.
 <br />	2. Segmentation.
 <br />	3. Precedent
 <br />
-<br />- Le menu des op&eacute;rations propos&eacute;s sur la convolution :  vous ne pouvez visualiser l'i
-mage qu'une fois un traitement appliqu&eacute;. Auquel quel cas aucune image ne s'affiche.
+<br />- Le menu des op&eacute;rations propos&eacute;s sur la convolution :  vous ne pouvez visualiser l'image qu'une fois un traitement appliqu&eacute;. Auquel quel cas aucune image ne s'affiche.
 <br />
 <br />	1. Filtre moyenne-passe-bas.
 <br />	2. Filtre de Sobel 1.
