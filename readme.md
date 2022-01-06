@@ -1,13 +1,16 @@
-Traitements d'images au format pgm avec les algorithmes de convolution, de k-means et de otsu---------------------------------------------------------------------------------------------
-Url     : http://codes-sources.commentcamarche.net/source/53673-traitements-d-images-au-format-pgm-avec-les-algorithmes-de-convolution-de-k-means-et-de-otsuAuteur  : lemoutDate    : 13/08/2013
+Traitements d'images au format pgm avec les algorithmes de convolution, de k-means et de otsu
+Url     : http://codes-sources.commentcamarche.net/source/53673-traitements-d-images-au-format-pgm-avec-les-algorithmes-de-convolution-de-k-means-et-de-otsu
+Auteur  : lemout
+Date    : 13/08/2013
+
 Licence :
 =========
 
-Ce document intitulé « Traitements d'images au format pgm avec les algorithmes de convolution, de k-means et de otsu » issu de CommentCaMarche
-(codes-sources.commentcamarche.net) est mis à disposition sous les termes de
+Ce document intitulÃ© Â« Traitements d'images au format pgm avec les algorithmes de convolution, de k-means et de otsu Â» issu de CommentCaMarche
+(codes-sources.commentcamarche.net) est mis Ã  disposition sous les termes de
 la licence Creative Commons. Vous pouvez copier, modifier des copies de cette
-source, dans les conditions fixées par la licence, tant que cette note
-apparaît clairement.
+source, dans les conditions fixÃ©es par la licence, tant que cette note
+apparaÃ®t clairement.
 
 Description :
 =============
@@ -23,7 +26,8 @@ ant l'application qui est lanc&eacute; &agrave; partir d'un makefile
 <br /> - u
 n Readme et un dossier images contenant quelques images pgm pour les tests
 <br 
-/><a name='source-exemple'></a><h2> Source / Exemple : </h2>
+/><a name='source-exemple'></a><h2> Source / Exemple : </h2>
+
 <br /><pre class=
 'code' data-mode='basic'>
 --- Le fichier algorithmes.h ---
@@ -40,7 +44,8 @@ rses.h&gt;
 
 #define taille 256
 #define diese '#'
-#define p5  &quot;P5&quot;
+#define p5  &quot;P5&quot;
+
 
 #define p6  &quot;P6&quot;
 
@@ -49,11 +54,11 @@ rses.h&gt;
 			/*Constantes pour interface
 s */
 
-#define KEY_ESCAPE     27         /*  Représente le bouton echape  */
+#define KEY_ESCAPE     27         /*  ReprÃ©sente le bouton echape  */
 #
-define MAX_STRING     1024	  /*  Longueur maximale d'une réponse */
+define MAX_STRING     1024	  /*  Longueur maximale d'une rÃ©ponse */
 //#define M
-AX_NAMEFILE   80       /*  Longueur max d'un chemin menant à un fichier image */
+AX_NAMEFILE   80       /*  Longueur max d'un chemin menant Ã  un fichier image */
 
 #define MESSAGE_ROW    6          /*  Ligne affichant des messages divers */
 
@@ -99,7 +104,8 @@ typedef struct cluster_kmeans
 } cluster ;
 
 		/*	Variables  	*/
-
+
+
 
 properties info ;  // proprietes d'une image de nom info.nameFile.
 int* histog
@@ -110,7 +116,8 @@ int* res
 ult;// result est l'image resultante de l'application d'une operation sur info.i
 mage.
 
-int otsuSeuil ; //represente le seuil donnee par l'algorithme de otsu.
+int otsuSeuil ; //represente le seuil donnee par l'algorithme de otsu.
+
 
 
 int K ; // Represente le nombre de cluster que k-means doit definr.
@@ -122,7 +129,7 @@ usters en dessus du quel on les considere instables.
 cluster* clusters; // Repr
 esente les k clusters que k-means devra definir.
 item* items; //Representent le
-s pixels de l'image regroupés en cluster.
+s pixels de l'image regroupÃ©s en cluster.
 
 char* nameFile ; //Nom donne a l'im
 age resultante des operations subies par info.image.
@@ -294,7 +301,8 @@ sizeof(char))* (strlen(file)) );
 			
 				if(
 !feof(f)){
-				   info.image = (unsigned char*)malloc(info.width*info.height);
+				   info.image = (unsigned char*)malloc(info.width*info.height);
+
 
 				   fread(info.image,sizeof(unsigned char),info.width*info.height,f);
 				}
@@ -438,7 +446,8 @@ nt) info.image[k];</li></ul>
 	   }
 	
 	}
-
+
+
 
 }
 
@@ -497,7 +506,8 @@ har* file){
 	
 	default_init();
 	getPropertiesOf(file);
-	initNameFile(NULL);
+	initNameFile(NULL);
+
 
 	getImageHistogramme();	
 	createImageMatrix();	
@@ -573,7 +583,8 @@ mage de selectionnee ]&quot;);
 	for(j=0;j&lt;length;j++){
 	    if(j==(length-1)) printw(&quo
 t;%d&quot;,histogramme[j]);
-	    else printw(&quot;%d, &quot;,histogramme[j]);
+	    else printw(&quot;%d, &quot;,histogramme[j]);
+
 
 	}
 	printw(&quot;]&quot;);
@@ -762,7 +773,8 @@ o.width;x++){
 			    else sum+= (*(image+offset+u))*(*k);
 			    k++;
 			}
-		    }
+		    }
+
 
 		    if(sum&lt;0) sum = 0 ;
 		    if(sum&gt;255) sum =255 ;
@@ -892,7 +904,7 @@ ux&lt;var) { var = aux; otsuSeuil = T; }
 }
 
 // Modifie l'image sel
-on le seuil trouvé par l'algoritme d'otsu.
+on le seuil trouvÃ© par l'algoritme d'otsu.
 void applyOtsuOnImage() {
 
 	if(res
@@ -930,7 +942,7 @@ void Otsu() {
 /*			Segmentation avec k-means	*/
 
 // Attribue un niveau de gris pseudo
--aléatoire au centre du cluster i. 0 &lt; i &lt; k+1 
+-alÃ©atoire au centre du cluster i. 0 &lt; i &lt; k+1 
 int ramdomGrayLevel(int i
 ) {
 
@@ -989,7 +1001,8 @@ sizeof(item))*length);
  _cluster;
 			elt-&gt;distance = -1;
 			clusters[_cluster].size++;
-			add++;
+			add++;
+
 
 			if(_cluster&lt;(K-1) &amp;&amp; add&gt;count) { add = 0; _cluster++;}
 		   
@@ -1020,7 +1033,8 @@ info.width;j++){
 rs+elt.numCluster;
 		c-&gt;centroide += *(image+j+i*info.width);
 	    }
-	  }
+	  }
+
 
 	
 	  for(i=0;i&lt;K;i++) {
@@ -1167,7 +1181,8 @@ entroide;</li></ul>
 
 }
 
-// Algorithme k-means  atomique.
+// Algorithme k-means  atomique.
+
 
 void kmeans(int k){
 
@@ -1226,10 +1241,10 @@ nt kernel[5][5] = {{1,4,6,6,1},{4,16,24,16,4},{6,24,36,24,6},{4,16,24,16,4},{1,4
 -1},{-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1}};
 
 char file_current [MAX_STRING] =&quot
-;\0&quot;; //variable représentant le fichier courant
+;\0&quot;; //variable reprÃ©sentant le fichier courant
 int isFirst = 1 ;
 //Menu
- principale lorsque l'on entre dans le programme pour la première fois.
+ principale lorsque l'on entre dans le programme pour la premiÃ¨re fois.
 char* m
 ain_menu [] = {
 			&quot;1. Choisir une image.&quot;,
@@ -1238,8 +1253,8 @@ t;,
 			 0
 		     };
 
-//Représente le menu principal lorsqu'une image a déjà 
-était choisie.
+//ReprÃ©sente le menu principal lorsqu'une image a dÃ©jÃ  
+Ã©tait choisie.
 char* extend_menu [] = {
 				&quot;1. Choisir une image.&quot;,
 
@@ -1253,7 +1268,7 @@ char* extend_menu [] = {
 				 0
 		       };
 
-//Donne la liste des opé
+//Donne la liste des opÃ©
 rations applicables sur une image.
 char* traitement_submenu [] = {
 			        
@@ -1264,7 +1279,7 @@ t;3. Precedent&quot;,
 			         0
 			      };
 
-//Représente les différents
+//ReprÃ©sente les diffÃ©rents
  filtres applicables pour une convolution.
 char* convolution_submenu [] = {
 		
@@ -1283,7 +1298,7 @@ uot;,
 				  0	
 			      };
 
-// Représente les différents options pour une se
+// ReprÃ©sente les diffÃ©rents options pour une se
 gmentation.
 char* segmentation_submenu [] = { 
                                
@@ -1298,30 +1313,32 @@ aliser image.&quot;,
 
 /* Permet de mettre en surbrillance le choix d'un utilisateur en attendant 
 sa validation.
-   Les paramétres, une liste d'option, l'option en mettre en sur
+   Les paramÃ©tres, une liste d'option, l'option en mettre en sur
 brillance dans la liste des
-   colonnes, la ligne et colonne de début où commen
-cer à afficher les options à l'écran.
+   colonnes, la ligne et colonne de dÃ©but oÃ¹ commen
+cer Ã  afficher les options Ã  l'Ã©cran.
 
 <ul><li>/</li></ul>
 
 /* Demande  une 
-saisie qu'elle lit à la position courante du curseur. Elle supprime tout saut 
+saisie qu'elle lit Ã  la position courante du curseur. Elle supprime tout saut 
 
-   de ligne présent à la fin de la ligne*/
+   de ligne prÃ©sent Ã  la fin de la ligne*/
 void getString(char* chaine) {
 
   
 int length ;
   wgetnstr(stdscr,chaine,MAX_STRING);
-  length = strlen(chaine);
+  length = strlen(chaine);
+
 
   if(length &gt;0 &amp;&amp; chaine[length-1]== '\n') chaine[length-1]='\0';
-
+
+
 
 }
 
-/* Demande confirmation à l'utilisateur pour une action */
+/* Demande confirmation Ã  l'utilisateur pour une action */
 int showMessag
 eConfirm() {
 
@@ -1345,12 +1362,13 @@ OW,1,&quot;     Annulation&quot;);
 	clrtoeol();
 	refresh();
 	sleep(1);
-   }
+   }
+
 
    return confirm ;
 }
 
-/* Nettoie l'écran et affiche l'objectif de notre app
+/* Nettoie l'Ã©cran et affiche l'objectif de notre app
 lication sous forme de titre. */
 void clear_screen() {
 	clear();
@@ -1388,12 +1406,12 @@ txt);
 		option++;
 	}
 	mvprintw(row_begin+row_current+5,colu
-mm_begin,&quot;Déplacez la surbrillance puis appuyer sur entrée &quot;);
+mm_begin,&quot;DÃ©placez la surbrillance puis appuyer sur entrÃ©e &quot;);
 	refre
 sh();
 }
 
-/* Permet d'obtenir le choix effectue par l'utilisateur à partir d'u
+/* Permet d'obtenir le choix effectue par l'utilisateur Ã  partir d'u
 n ensemble d'options.*/
 int select_item(char* prompt,char* options[]){
 
@@ -1614,7 +1632,8 @@ ed);
 			   mvprintw(MESSAGE_ROW,5,&q
 uot;%s effectuee&quot;,convolution_submenu[5]+2);
 			   getch();
-			   break;
+			   break;
+
 
 			    //mvprintw(ERROR_ROW-4,25,convolution_submenu[5]);break;
 		case '7' : c
@@ -1735,7 +1754,8 @@ clean:
 	rm -rf $(CMD).exe
 </pre>
 <br
- /><a name='conclusion'></a><h2> Conclusion : </h2>
+ /><a name='conclusion'></a><h2> Conclusion : </h2>
+
 <br />---		Services Exig&e
 acute;s
 <br />
@@ -1814,7 +1834,8 @@ uitter
 <br />
 <br />- Le menu des traitements
 <br />
-<br />	1. Convolution.
+<br />	1. Convolution.
+
 
 <br />	2. Segmentation.
 <br />	3. Precedent
